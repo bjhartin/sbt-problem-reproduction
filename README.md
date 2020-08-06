@@ -7,9 +7,6 @@ For [SBT issue 5726](https://github.com/sbt/sbt/issues/5726).
 - Clone this repo and run:
 
 ```
-cd plugin
-sbt publishLocal
-cd ../project-using-plugin
 sbt
 ```
 
@@ -60,4 +57,4 @@ Running `last Test / cucumber` will show:
 [error] (Test / cucumber) java.util.NoSuchElementException
 ```
 
-`parseResource` is attempting to use `ServiceLoader` to load a cucumber gherkin class from cucumber-core, which should be reachable, since the executing code included io.cucumber.core classes.
+`parseResource` is attempting to use `ServiceLoader` to load a service (`FeatureParser`) whose implementation is defined in the `META-INF/services/...FeatureParser` file inside the `gherkin-messages` jar, which should be reachable, since it's on the classpath for the metabuild (verify by `reload plugins` then `show fullClasspath`).

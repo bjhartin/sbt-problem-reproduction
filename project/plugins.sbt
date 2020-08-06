@@ -1,0 +1,1 @@
+libraryDependencies += "io.cucumber" %% "cucumber-scala" % "6.2.2"
