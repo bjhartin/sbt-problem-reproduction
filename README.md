@@ -60,4 +60,4 @@ Running `last Test / cucumber` will show:
 [error] (Test / cucumber) java.util.NoSuchElementException
 ```
 
-`parseResource` is attempting to use `ServiceLoader` to load a cucumber gherkin class from cucumber-core, which should be reachable, since the executing code included io.cucumber.core classes.
+`parseResource` is attempting to use `ServiceLoader` to load a cucumber gherkin class from cucumber-core, which I think should be reachable, since the plugin was able to load the io.cucumber.core classes in the stack trace.
